@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#gameTitle {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.1em;
+    color: #34495e;
+}
+
+.images-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-wrapper {
+    position: relative;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.game-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.markers-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.marker {
+    position: absolute;
+    border: 2px solid #e74c3c;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.success-message {
+    text-align: center;
+    background: #2ecc71;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+#restartButton {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+
+#restartButton:hover {
+    background: #2980b9;
+}
+
+@media (max-width: 768px) {
+    .game-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .image-wrapper {
+        min-width: 250px;
+    }
+}
+
+.found-animation {
+    animation: foundFlash 0.5s;
+}
+
+@keyframes foundFlash {
+    0% { box-shadow: 0 0 0 0 #2ecc71; transform: scale(1); }
+    50% { box-shadow: 0 0 20px 10px #2ecc71; transform: scale(1.3); }
+    100% { box-shadow: 0 0 0 0 #2ecc71; transform: scale(1); }
+}
+
+.hint-marker {
+    position: absolute;
+    border: 2px dashed #3498db;
+    border-radius: 50%;
+    opacity: 0.25;
+    pointer-events: none;
+    background: none;
+    z-index: 1;
+}
+
+.debug-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #e74c3c;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    z-index: 2;
+    pointer-events: none;
+    box-shadow: 0 0 4px #0002;
+}

@@ -1,0 +1,13 @@
+{
+    "gameTitle": "Spot the Difference - Toucans",
+    "images": {
+        "image1": "images/toucan1.svg",
+        "image2": "images/toucan2.svg"
+    },
+    "differences": [
+        { "x": 100, "y": 200, "width": 50, "height": 50, "description": "Hint: Top left" },
+        { "x": 300, "y": 150, "width": 40, "height": 40, "description": "Hint: Top right" },
+        { "x": 500, "y": 300, "width": 30, "height": 30, "description": "Hint: Bottom right" },
+        { "x": 220, "y": 110, "width": 25, "height": 25, "description": "Hint: Blue eye" }
+    ]
+}

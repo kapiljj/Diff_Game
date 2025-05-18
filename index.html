@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot the Difference - Toucans</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1 id="gameTitle">Spot the Difference</h1>
+            <div class="game-stats">
+                <div class="timer">Time: <span id="timer">00:00</span></div>
+                <div class="score">Found: <span id="score">0</span>/<span id="totalDifferences">0</span></div>
+            </div>
+        </header>
+
+        <main class="images-container">
+            <div class="image-wrapper">
+                <img id="image1" src="" alt="Original Image" class="game-image">
+                <div class="markers-layer" id="markers1"></div>
+            </div>
+            <div class="image-wrapper">
+                <img id="image2" src="" alt="Modified Image" class="game-image">
+                <div class="markers-layer" id="markers2"></div>
+            </div>
+        </main>
+
+        <div id="successMessage" class="success-message hidden">
+            <h2>Congratulations! 🎉</h2>
+            <p>You found all the differences in <span id="finalTime">00:00</span>!</p>
+            <button id="restartButton">Play Again</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
