@@ -139,29 +139,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Show faint hint circles for each difference
     function showHints() {
-        const markers1 = document.getElementById('markers1');
-        const markers2 = document.getElementById('markers2');
-        markers1.querySelectorAll('.hint-marker, .debug-dot').forEach(m => m.remove());
-        markers2.querySelectorAll('.hint-marker, .debug-dot').forEach(m => m.remove());
-        gameConfig.differences.forEach(diff => {
-            [markers1, markers2].forEach(layer => {
-                const hint = document.createElement('div');
-                hint.className = 'hint-marker';
-                hint.style.width = `${diff.width}px`;
-                hint.style.height = `${diff.height}px`;
-                hint.style.left = `${diff.x}px`;
-                hint.style.top = `${diff.y}px`;
-                hint.style.pointerEvents = 'none';
-                hint.title = diff.description || '';
-                layer.appendChild(hint);
-                // Add debug dot at center
-                const dot = document.createElement('div');
-                dot.className = 'debug-dot';
-                dot.style.left = `${diff.x + diff.width / 2 - 4}px`;
-                dot.style.top = `${diff.y + diff.height / 2 - 4}px`;
-                layer.appendChild(dot);
-            });
-        });
+        // Hints have been removed to keep interface clean
+        return;
     }
 
     // Mark difference on both images
